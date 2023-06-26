@@ -9,7 +9,7 @@ from flask import *
 
 app = Flask(__name__)
 
-@app.route('/', method=['GET'])
+@app.route('/', methods=['GET'])
 def main() -> Response:
     logging.info('Python HTTP trigger function processed a request.')
 
