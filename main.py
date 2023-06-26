@@ -5,7 +5,7 @@ from gensim.summarization.summarizer import summarize
 import os, io
 import re
 import requests
-from flask import *
+from flask import Flask, request, Response
 
 app = Flask(__name__)
 
