@@ -42,14 +42,14 @@ def main() -> Response:
                 "transcripts": transcripts,
                 "summary": summary
             }
-            res = Response(json.dumps(results), status_code=200, mimetype="application/json")
+            res = Response(json.dumps(results), status=200, mimetype="application/json")
             res.headers["Access-Control-Allow-Origin"] = "*"
             res.headers["Access-Control-Allow-Credentials"] =  "true"
             res.headers["Access-Control-Allow-Headers"] = "Origin, Accept, X-Requested-With, Content-Type, "\
                 + "Access-Control-Request-Method, Access-Control-Request-Headers, Authorization"
             return res
         except Exception:
-            res = Response("No subtitles", status_code=201)
+            res = Response("No subtitles", status=201)
             res.headers["Access-Control-Allow-Origin"] = "*"
             res.headers["Access-Control-Allow-Credentials"] =  "true"
             res.headers["Access-Control-Allow-Headers"] = "Origin, Accept, X-Requested-With, Content-Type, "\
@@ -59,7 +59,7 @@ def main() -> Response:
     else:
         res = Response(
              "This HTTP triggered function executed successfully. Pass a video_id in the query string or in the request body for a personalized response.",
-             status_code=201
+             status=201
         )
 
         res.headers["Access-Control-Allow-Origin"] = "*"
